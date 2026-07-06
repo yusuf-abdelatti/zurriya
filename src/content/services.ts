@@ -1,0 +1,78 @@
+export const assessmentItems = {
+  en: [
+    'Developmental Assessments',
+    'Psychological Assessments',
+    'Cognitive Assessments',
+    'Intelligence (IQ) Assessments',
+    'Behavioral Assessments',
+    'Adaptive Functioning Assessments',
+    'School Readiness Evaluations',
+    'Executive Function Assessments',
+    'Attention, Memory, and Learning Assessments',
+    'Autism and Neurodevelopmental Screening',
+  ],
+  ar: [
+    'التقييمات التطورية',
+    'التقييمات النفسية',
+    'التقييمات المعرفية',
+    'تقييمات الذكاء (IQ)',
+    'التقييمات السلوكية',
+    'تقييمات الأداء التكيفي',
+    'تقييمات الاستعداد المدرسي',
+    'تقييمات الوظائف التنفيذية',
+    'تقييمات الانتباه والذاكرة والتعلم',
+    'فحص التوحد والاضطرابات العصبية التطورية',
+  ],
+};
+
+export const interventionItems = {
+  en: [
+    'Applied Behavior Analysis (ABA)',
+    'Behavioral Intervention',
+    'Cognitive Training',
+    'Executive Function Training',
+    'Attention and Memory Training',
+    'Social Skills Development',
+    'Emotional Regulation Skills',
+    'Communication and Functional Skills Support',
+    'Daily Living and Independence Skills',
+    'School Readiness Programs',
+    'Learning Support',
+    'Skill Development Programs',
+    'Individual Development Plans',
+  ],
+  ar: [
+    'تحليل السلوك التطبيقي (ABA)',
+    'التدخل السلوكي',
+    'التدريب المعرفي',
+    'تدريب الوظائف التنفيذية',
+    'تدريب الانتباه والذاكرة',
+    'تنمية المهارات الاجتماعية',
+    'مهارات تنظيم المشاعر',
+    'دعم مهارات التواصل والمهارات الوظيفية',
+    'مهارات الحياة اليومية والاستقلالية',
+    'برامج الاستعداد المدرسي',
+    'دعم التعلم',
+    'برامج تنمية المهارات',
+    'خطط التطوير الفردية',
+  ],
+};
+
+export const partnershipItems = {
+  en: [
+    'Parent Guidance',
+    'Parent Coaching',
+    'Home Program Development',
+    'Progress Reviews',
+    'Practical Strategies for Daily Life',
+    'Collaborative Goal Setting',
+  ],
+  ar: [
+    'إرشاد الوالدين',
+    'تدريب الوالدين',
+    'تطوير البرامج المنزلية',
+    'مراجعات التقدم',
+    'استراتيجيات عملية للحياة اليومية',
+    'تحديد الأهداف التشاركي',
+  ],
+};

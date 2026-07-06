@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "common": {
+    "bookConsultation": "Book a Consultation",
+    "getInTouch": "Get in Touch",
+    "viewAllServices": "View All Services",
+    "tagline": "Growing Minds. Shaping Generations."
+  },
+  "home": {
+    "hero": {
+      "positioning": "Rigorous clinical care, radical transparency — because trust comes before treatment.",
+      "cta": "Book a Consultation"
+    },
+    "intro": {
+      "heading": "Every Child. Every Family. Every Generation.",
+      "body1": "At Zurriya, we see the child in front of us — and the generation they will become.",
+      "body2": "Our work combines clinical precision with genuine family partnership, because progress that outlasts the session is the only progress that matters.",
+      "body3": "When one child grows, a family grows with them."
+    },
+    "services": {
+      "heading": "How We Help",
+      "card1Title": "Comprehensive Assessments",
+      "card1Desc": "Detailed, evidence-based evaluations to understand each child's unique developmental profile.",
+      "card2Title": "Individualized Intervention",
+      "card2Desc": "Personalized programs built around each child's strengths, needs, and goals.",
+      "card3Title": "Parent Partnership",
+      "card3Desc": "Active collaboration so families can confidently support their child's growth every day.",
+      "cta": "View All Services"
+    },
+    "vision": {
+      "heading": "Built for More Than a Session",
+      "body": "We believe that supporting one child strengthens a family — and strengthening families helps build healthier communities and future generations.",
+      "link": "Our Vision"
+    },
+    "trust": {
+      "badge1": "Evidence-Based",
+      "badge2": "Family-Centered",
+      "badge3": "Cairo-Based"
+    },
+    "closing": {
+      "heading": "Ready to take the first step?",
+      "body": "Every child's journey is unique. Let's understand yours.",
+      "cta": "Get in Touch"
+    }
+  },
+  "about": {
+    "hero": {
+      "heading": "About Zurriya"
+    },
+    "mission": {
+      "heading": "Who We Are",
+      "p1": "Zurriya is a child and adolescent development center built on a single conviction: that families deserve both clinical excellence and complete transparency. We call this trust before treatment.",
+      "p2": "Our work is grounded in evidence, shaped by compassion, and designed around the whole child — not just a presenting symptom. Every assessment, every intervention, every recommendation is built to be understood by the families we serve, not just filed in a report.",
+      "p3": "We specialize in understanding how children think, learn, communicate, behave, and interact with the world around them — and in building individualized plans that translate clinical insight into real, lasting change across home, school, and every environment a child inhabits."
+    },
+    "approach": {
+      "heading": "Our Approach",
+      "p1": "We work at the intersection of science and relationship. Every assessment and intervention draws on current evidence and individual clinical reasoning — but equally on genuine partnership with each family. Parents are not passive recipients of reports; they are active participants in the work.",
+      "p2": "Because meaningful progress only happens when the environment around the child is aligned — home, school, and clinic all pointing in the same direction."
+    },
+    "vision": {
+      "heading": "Our Vision",
+      "p1": "We believe that supporting one child strengthens a family — and strengthening families helps build healthier communities and future generations. The name Zurriya (ذرية) is drawn from this belief: a Quranic word meaning offspring, progeny, the generations that grow from a root.",
+      "p2": "Our purpose is to be that root — to create a professional, compassionate, and transparent space where children grow with confidence, families feel genuinely understood, and every developmental milestone becomes a step toward a brighter generation."
+    },
+    "values": {
+      "heading": "Our Values",
+      "integrity": {
+        "title": "Integrity",
+        "body": "We speak honestly — about what we observe, what we offer, and what we cannot."
+      },
+      "compassion": {
+        "title": "Compassion",
+        "body": "Every family arrives with real fears. We receive them with warmth and hold them with respect."
+      },
+      "excellence": {
+        "title": "Scientific Excellence",
+        "body": "Our methods are current, evidence-based, and held to real outcomes — not just clinical convention."
+      },
+      "family": {
+        "title": "Family Partnership",
+        "body": "Progress that outlasts the session only happens when families understand and participate in the work."
+      },
+      "growth": {
+        "title": "Continuous Growth",
+        "body": "We invest in our own learning as seriously as we invest in the children we serve."
+      },
+      "responsibility": {
+        "title": "Responsibility",
+        "body": "We take careful account of the trust families place in us — and the weight of every recommendation we make."
+      }
+    },
+    "closing": "Growing Minds. Shaping Generations."
+  },
+  "services": {
+    "hero": {
+      "heading": "Our Services",
+      "subheading": "Comprehensive support for every stage of your child's developmental journey."
+    },
+    "assessments": {
+      "heading": "Comprehensive Assessments",
+      "intro": "We provide detailed, evidence-based assessments to better understand each child's unique developmental profile, including:",
+      "closing": "These assessments help families gain a clear understanding of their child's strengths, challenges, and individualized recommendations."
+    },
+    "intervention": {
+      "heading": "Individualized Intervention",
+      "intro": "Based on each child's assessment results and goals, we develop personalized intervention programs that may include:",
+      "closing": "Every intervention is tailored to the child's developmental level, learning style, and family priorities."
+    },
+    "partnership": {
+      "heading": "Parent Partnership",
+      "intro": "We believe that meaningful progress happens when professionals and families work together. Parents are active partners throughout the entire process.",
+      "closing": "Our goal is to help families confidently support their child's development beyond the therapy room."
+    },
+    "cta": {
+      "heading": "Ready to learn more?",
+      "body": "Contact us to discuss which services are right for your child.",
+      "button": "Contact Us"
+    }
+  },
+  "contact": {
+    "hero": {
+      "heading": "Get in Touch",
+      "subheading": "We'd love to hear from you. Reach out to discuss how we can support your child and family."
+    },
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+20 (0) 000 000 0000",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell us a bit about your child and what you're looking for...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "successTitle": "Message Received",
+      "successBody": "Thank you for reaching out. We'll be in touch within 1–2 business days.",
+      "errorName": "Name is required",
+      "errorEmailRequired": "Email is required",
+      "errorEmailInvalid": "Please enter a valid email address",
+      "errorMessage": "Message is required"
+    },
+    "info": {
+      "heading": "Contact Information",
+      "addressLabel": "Address",
+      "addressValue": "Cairo, Egypt",
+      "phoneLabel": "Phone",
+      "phoneValue": "+20 000 000 0000",
+      "emailLabel": "Email",
+      "emailValue": "info@zurriya.com",
+      "hoursLabel": "Working Hours",
+      "hoursValue": "Sunday – Thursday: 9:00 AM – 6:00 PM"
+    },
+    "mapPlaceholder": "Location Map"
+  },
+  "footer": {
+    "tagline": "Growing Minds. Shaping Generations.",
+    "copyright": "© 2024 Zurriya. All rights reserved.",
+    "instagramLabel": "Instagram",
+    "facebookLabel": "Facebook"
+  }
+}
