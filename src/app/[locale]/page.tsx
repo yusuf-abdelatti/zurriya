@@ -216,7 +216,7 @@ export default async function HomePage() {
               <div className="bg-white px-8 py-6 border-t border-border/60 flex flex-col gap-4">
                 {[
                   { dot: 'bg-teal',  text: isAr ? 'مبني على الأدلة العلمية' : 'Evidence-Based Practice' },
-                  { dot: 'bg-coral', text: isAr ? 'محور الأسرة'             : 'Family-Centered Care' },
+                  { dot: 'bg-coral', text: isAr ? 'الأسرة شريك أساسي'       : 'Family-Centered Care' },
                   { dot: 'bg-sage',  text: isAr ? 'مقرنا التجمع الخامس'     : 'Based in New Cairo' },
                 ].map((item) => (
                   <div key={item.text} className={`flex items-center gap-3 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
@@ -244,18 +244,18 @@ export default async function HomePage() {
             {[
               {
                 number: isAr ? '٠١' : '01',
-                head:   isAr ? 'مبني على الأدلة' : 'Evidence-Based',
-                body:   isAr ? 'كل تقييم وتدخل مبني على أحدث الأبحاث العلمية' : 'Every assessment and intervention grounded in current research',
+                head:   isAr ? 'مبني على الأدلة العلمية' : 'Evidence-Based',
+                body:   isAr ? 'كل تقييم وتدخل يستند إلى أحدث الأبحاث العلمية والحكم الإكلينيكي المتخصص' : 'Every assessment and intervention grounded in current research',
               },
               {
                 number: isAr ? '٠٢' : '02',
-                head:   isAr ? 'محور الأسرة' : 'Family-Centered',
-                body:   isAr ? 'الوالدان شريكان فاعلان في كل خطوة من رحلة التنمية' : 'Parents are active partners throughout every step of the journey',
+                head:   isAr ? 'الأسرة شريك أساسي' : 'Family-Centered',
+                body:   isAr ? 'نؤمن أن الوالدين شريكان فاعلان في رحلة نمو طفلهم وتطوره' : 'Parents are active partners throughout every step of the journey',
               },
               {
                 number: isAr ? '٠٣' : '03',
-                head:   isAr ? 'نتائج قابلة للقياس' : 'Measurable Outcomes',
-                body:   isAr ? 'نراقب التقدم ونكيّف الخطة لضمان نتائج حقيقية' : 'Progress is tracked and plans adapt to ensure real results',
+                head:   isAr ? 'نتابع التقدم ونقيس أثره' : 'Measurable Outcomes',
+                body:   isAr ? 'نُتابع التقدم الفعلي لطفلك ونُكيّف الخطة وفق احتياجاته المتطورة' : 'Progress is tracked and plans adapt to ensure real results',
               },
             ].map((p) => (
               <div key={p.number} className={`flex flex-col gap-3 px-6 md:px-8 py-7 md:py-8 ${isAr ? 'rtl:text-right' : ''}`}>

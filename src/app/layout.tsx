@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { getLocale } from 'next-intl/server';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -13,9 +14,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
+  const isAr = locale === 'ar';
+
   return (
-    <html suppressHydrationWarning>
+    <html lang={locale} dir={isAr ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
