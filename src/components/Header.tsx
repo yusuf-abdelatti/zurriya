@@ -25,11 +25,11 @@ export function Header() {
   }, []);
 
   const navItems = [
-    { label: isAr ? 'الرئيسية' : 'Home',       href: '#home'     },
-    { label: isAr ? 'خدماتنا'  : 'Services',    href: '#services' },
-    { label: isAr ? 'من نحن'   : 'About',       href: '#about'    },
-    { label: isAr ? 'فريقنا'   : 'Our Team',    href: '#team'     },
-    { label: isAr ? 'تواصل'    : 'Contact',     href: '#contact'  },
+    { label: isAr ? 'الرئيسية' : 'Home',       href: `/${locale}`           },
+    { label: isAr ? 'خدماتنا'  : 'Services',    href: `/${locale}#services`  },
+    { label: isAr ? 'من نحن'   : 'About',       href: `/${locale}#about`     },
+    { label: isAr ? 'فريقنا'   : 'Our Team',    href: `/${locale}#team`      },
+    { label: isAr ? 'تواصل'    : 'Contact',     href: `/${locale}#contact`   },
   ];
 
   return (
@@ -42,7 +42,7 @@ export function Header() {
     >
       <nav className={`max-w-content mx-auto px-6 h-16 flex items-center justify-between gap-6 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
         {/* Logo */}
-        <a href="#home" className="shrink-0">
+        <Link href={`/${locale}`} className="shrink-0">
           <Image
             src="/logo/logo.png"
             alt="Zurriya Child Development Center"
@@ -51,7 +51,7 @@ export function Header() {
             className="h-11 w-auto"
             priority
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <ul className={`hidden md:flex items-center gap-7 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
@@ -76,7 +76,7 @@ export function Header() {
             {isAr ? 'EN' : 'عربي'}
           </Link>
           <a
-            href="#contact"
+            href={`/${locale}#contact`}
             className="text-sm font-semibold bg-teal text-white rounded-full px-5 py-2 hover:bg-teal-dark transition-colors shadow-sm shadow-teal/20"
           >
             {isAr ? 'احجز استشارة' : 'Book a Consultation'}
@@ -123,7 +123,7 @@ export function Header() {
             ))}
           </ul>
           <a
-            href="#contact"
+            href={`/${locale}#contact`}
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center bg-teal text-white text-sm font-semibold rounded-full px-6 py-3 hover:bg-teal-dark transition-colors w-full"
           >
