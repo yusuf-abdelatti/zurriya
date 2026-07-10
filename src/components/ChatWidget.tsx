@@ -26,8 +26,30 @@ export function ChatWidget({ locale }: { locale: string }) {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [showSuggested, setShowSuggested] = useState(true);
+  const [hint, setHint] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !localStorage.getItem('noor_hint_seen')) {
+      const t = setTimeout(() => setHint(true), 3500);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!hint) return;
+    const t = setTimeout(() => {
+      setHint(false);
+      localStorage.setItem('noor_hint_seen', '1');
+    }, 8000);
+    return () => clearTimeout(t);
+  }, [hint]);
+
+  const dismissHint = () => {
+    setHint(false);
+    localStorage.setItem('noor_hint_seen', '1');
+  };
 
   const welcome: Msg = {
     role: 'assistant',
@@ -215,9 +237,34 @@ export function ChatWidget({ locale }: { locale: string }) {
         </div>
       )}
 
+      {/* ── Hint tooltip ─────────────────────────────────── */}
+      {hint && !open && (
+        <div
+          dir={isAr ? 'rtl' : 'ltr'}
+          className="fixed bottom-24 start-4 z-50 bg-white rounded-2xl shadow-lg border border-border px-4 py-3 w-[220px] cursor-pointer"
+          onClick={() => { dismissHint(); setOpen(true); }}
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); dismissHint(); }}
+            className="absolute top-2 end-2 text-ink-2/40 hover:text-ink-2/70 transition-colors"
+            aria-label="Dismiss"
+          >
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+              <line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/>
+            </svg>
+          </button>
+          <p className="text-sm font-semibold text-ink pe-4">{isAr ? 'مرحباً! 👋' : 'Hi there! 👋'}</p>
+          <p className="text-xs text-ink-2 mt-1 leading-snug">
+            {isAr ? 'لديك أسئلة عن خدماتنا؟ تحدث مع نور!' : 'Questions about our services? Chat with Noor!'}
+          </p>
+          {/* Tail */}
+          <div className="absolute -bottom-[7px] start-5 w-3.5 h-3.5 bg-white border-b border-e border-border rotate-45" />
+        </div>
+      )}
+
       {/* ── Toggle button ────────────────────────────────── */}
       <button
-        onClick={() => setOpen(o => !o)}
+        onClick={() => { setOpen(o => !o); dismissHint(); }}
         aria-label={isAr ? 'افتح المحادثة' : 'Open chat'}
         className="fixed bottom-6 start-6 z-50 w-14 h-14 rounded-full bg-teal text-white
           shadow-lg shadow-teal/30 hover:bg-teal-dark active:scale-95 transition-all

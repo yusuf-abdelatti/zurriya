@@ -134,9 +134,9 @@ export default async function HomePage() {
         <div className="max-w-content mx-auto px-6 py-10 md:py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
 
           {/* ── Left: text ── */}
-          <div className={`flex flex-col gap-6 ${isAr ? 'rtl:items-end rtl:text-right' : ''}`}>
+          <div className="flex flex-col gap-6 rtl:items-start rtl:text-right">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 bg-teal-pale border border-teal/20 rounded-full px-4 py-1.5 w-fit">
+            <div className="inline-flex items-center gap-2 bg-teal-pale border border-teal/20 rounded-full px-4 py-1.5 w-fit rtl:flex-row-reverse">
               <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
               <span className="text-xs font-semibold text-teal tracking-wide">
                 {isAr ? 'مركز تنمية الطفل والمراهق · التجمع الخامس' : 'Child & Adolescent Development · New Cairo'}
@@ -170,13 +170,13 @@ export default async function HomePage() {
             </p>
 
             {/* CTAs */}
-            <div className={`flex flex-wrap gap-3 pt-2 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
+            <div className={`flex flex-wrap gap-3 pt-2 rtl:flex-row-reverse`}>
               <a
                 href={`/${locale}#contact`}
                 className="inline-flex items-center gap-2 bg-teal text-white text-sm font-semibold rounded-full px-7 py-3.5 hover:bg-teal-dark transition-colors shadow-lg shadow-teal/25"
               >
                 {bookLabel}
-                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" className={isAr ? 'rotate-180' : ''}>
+                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" className="rtl:rotate-180">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
                 </svg>
               </a>
@@ -189,7 +189,7 @@ export default async function HomePage() {
             </div>
 
             {/* Location pill */}
-            <div className={`flex items-center gap-2 text-sm text-ink-2 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
+            <div className={`flex items-center gap-2 text-sm text-ink-2 rtl:flex-row-reverse`}>
               <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
@@ -220,7 +220,7 @@ export default async function HomePage() {
                   { dot: 'bg-coral', text: isAr ? 'الأسرة شريك أساسي'       : 'Family-Centered Care' },
                   { dot: 'bg-sage',  text: isAr ? 'مقرنا التجمع الخامس'     : 'Based in New Cairo' },
                 ].map((item) => (
-                  <div key={item.text} className={`flex items-center gap-3 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
+                  <div key={item.text} className={`flex items-center gap-3 rtl:flex-row-reverse`}>
                     <span className={`w-2 h-2 rounded-full flex-shrink-0 ${item.dot}`} />
                     <span className="text-sm text-ink-2 font-medium">{item.text}</span>
                   </div>
@@ -259,7 +259,7 @@ export default async function HomePage() {
                 body:   isAr ? 'نُتابع التقدم الفعلي لطفلك ونُكيّف الخطة وفق احتياجاته المتطورة' : 'Progress is tracked and plans adapt to ensure real results',
               },
             ].map((p) => (
-              <div key={p.number} className={`flex flex-col gap-3 px-6 md:px-8 py-7 md:py-8 ${isAr ? 'rtl:text-right' : ''}`}>
+              <div key={p.number} className={`flex flex-col gap-3 px-6 md:px-8 py-7 md:py-8 rtl:text-right`}>
                 <span className="font-heading text-4xl text-white/15 leading-none select-none">{p.number}</span>
                 <h3 className="font-heading text-xl text-white">{p.head}</h3>
                 <p className="text-white/55 text-sm leading-relaxed">{p.body}</p>
@@ -274,7 +274,7 @@ export default async function HomePage() {
       ════════════════════════════════════════════════════════ */}
       <section id="services" className="bg-linen px-6 py-14 md:py-20 lg:py-28">
         <div className="max-w-content mx-auto">
-          <div className={`mb-12 ${isAr ? 'rtl:text-right' : ''}`}>
+          <div className={`mb-12 rtl:text-right`}>
             <p className="text-xs font-semibold tracking-[0.18em] uppercase text-teal mb-3">
               {isAr ? 'ما نقدمه' : 'What We Offer'}
             </p>
@@ -297,8 +297,8 @@ export default async function HomePage() {
                   <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-5 ${card.iconBg} shadow-sm`}>
                     {card.icon}
                   </div>
-                  <div className={`flex items-center justify-between ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
-                    <h3 className="font-heading text-xl text-ink leading-snug pr-2">
+                  <div className={`flex items-center justify-between rtl:flex-row-reverse`}>
+                    <h3 className="font-heading text-xl text-ink leading-snug pe-2">
                       {card.heading}
                     </h3>
                     <span className="font-heading text-3xl text-ink/8 select-none flex-shrink-0">
@@ -309,7 +309,7 @@ export default async function HomePage() {
                 </div>
 
                 <div className="flex-1 px-7 py-6">
-                  <ul className={`flex flex-wrap gap-2 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
+                  <ul className={`flex flex-wrap gap-2 rtl:flex-row-reverse`}>
                     {card.items.map((item) => (
                       <li
                         key={item}
@@ -323,7 +323,7 @@ export default async function HomePage() {
                 </div>
 
                 <div className="px-7 pb-7">
-                  <p className={`text-xs text-ink-2 italic leading-relaxed border-t border-border pt-4 ${isAr ? 'rtl:text-right' : ''}`}>
+                  <p className={`text-xs text-ink-2 italic leading-relaxed border-t border-border pt-4 rtl:text-right`}>
                     {card.closing}
                   </p>
                 </div>
@@ -338,7 +338,7 @@ export default async function HomePage() {
       ════════════════════════════════════════════════════════ */}
       <section id="about" className="bg-paper px-6 py-14 md:py-20 lg:py-28">
         <div className="max-w-content mx-auto">
-          <div className={`grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-14 md:gap-20 ${isAr ? 'rtl:text-right' : ''}`}>
+          <div className={`grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-14 md:gap-20 rtl:text-right`}>
             <div className="lg:sticky lg:top-24 self-start">
               <p className="text-xs font-semibold tracking-[0.18em] uppercase text-coral mb-3">
                 {isAr ? 'من نحن' : 'Who We Are'}
@@ -346,7 +346,7 @@ export default async function HomePage() {
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-ink leading-tight mb-6">
                 {tAbout('mission.heading')}
               </h2>
-              <div className="w-10 h-1 bg-coral rounded-full mb-6" />
+              <div className="w-10 h-1 bg-coral rounded-full mb-6 rtl:ms-auto" />
 
               {/* Trust before treatment callout */}
               <div className="bg-teal-pale border border-teal/20 rounded-2xl p-5">
@@ -381,8 +381,8 @@ export default async function HomePage() {
       ════════════════════════════════════════════════════════ */}
       <section className="bg-night-2 px-6 py-14 md:py-20 lg:py-28">
         <div className="max-w-content mx-auto">
-          <div className={`mb-14 ${isAr ? 'rtl:text-right' : ''}`}>
-            <div className={`flex items-center gap-3 mb-4 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
+          <div className={`mb-14 rtl:text-right`}>
+            <div className={`flex items-center gap-3 mb-4 rtl:flex-row-reverse`}>
               <div className="h-px w-8 bg-coral/40" />
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-coral/80">
                 {isAr ? 'ما يحركنا' : 'What Drives Us'}
@@ -400,7 +400,7 @@ export default async function HomePage() {
               return (
                 <div
                   key={v.key}
-                  className={`rounded-2xl border p-6 flex flex-col gap-3 ${v.color} ${isAr ? 'rtl:text-right' : ''}`}
+                  className={`rounded-2xl border p-6 flex flex-col gap-3 ${v.color} rtl:text-right`}
                 >
                   <span className="text-2xl">{v.icon}</span>
                   <h3 className="font-heading text-lg text-white">
@@ -421,7 +421,7 @@ export default async function HomePage() {
       ════════════════════════════════════════════════════════ */}
       <section id="team" className="bg-linen px-6 py-14 md:py-20 lg:py-28">
         <div className="max-w-content mx-auto">
-          <div className={`mb-12 ${isAr ? 'rtl:text-right' : ''}`}>
+          <div className={`mb-12 rtl:text-right`}>
             <p className="text-xs font-semibold tracking-[0.18em] uppercase text-sage mb-3">
               {isAr ? 'فريقنا' : 'Our Team'}
             </p>
@@ -444,10 +444,10 @@ export default async function HomePage() {
                 <Link
                   key={member.slug}
                   href={`/${locale}/team/${member.slug}`}
-                  className={`bg-white rounded-3xl overflow-hidden border border-border shadow-sm card-lift flex flex-col group ${isAr ? 'rtl:text-right' : ''}`}
+                  className={`bg-white rounded-3xl overflow-hidden border border-border shadow-sm card-lift flex flex-col group rtl:text-right`}
                 >
                   {/* Avatar band */}
-                  <div className={`${colorBg} px-8 py-8 flex items-center gap-5 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
+                  <div className={`${colorBg} px-8 py-8 flex items-center gap-5 rtl:flex-row-reverse`}>
                     <TeamAvatar
                       photo={member.photo}
                       initials={member.initials}
@@ -461,7 +461,7 @@ export default async function HomePage() {
                     <svg
                       width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"
                       viewBox="0 0 24 24"
-                      className={`text-white/50 group-hover:text-white transition-colors flex-shrink-0 ${isAr ? 'rotate-180' : ''}`}
+                      className="text-white/50 group-hover:text-white transition-colors flex-shrink-0 rtl:rotate-180"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
                     </svg>
@@ -473,7 +473,7 @@ export default async function HomePage() {
                       <p className="text-[10px] font-bold tracking-widest uppercase text-ink-2/50 mb-1.5">
                         {isAr ? 'التخصصات' : 'Specializations'}
                       </p>
-                      <div className={`flex flex-wrap gap-1.5 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
+                      <div className={`flex flex-wrap gap-1.5 rtl:flex-row-reverse`}>
                         {member.titles[lang].slice(0, 2).map((title) => (
                           <span
                             key={title}
@@ -499,7 +499,7 @@ export default async function HomePage() {
                     </p>
 
                     <p className={`text-xs font-semibold mt-auto pt-2 ${arrowColor} group-hover:underline`}>
-                      {isAr ? 'عرض الملف الكامل ←' : 'View full profile →'}
+                      {isAr ? 'عرض الملف الكامل' : 'View full profile'}
                     </p>
                   </div>
                 </Link>
@@ -535,13 +535,13 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <blockquote className={`font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white leading-[1.3] tracking-tight max-w-2xl ${isAr ? 'rtl:text-right' : ''}`}>
+          <blockquote className={`font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white leading-[1.3] tracking-tight max-w-2xl rtl:text-right`}>
             {isAr
               ? 'النسل والأجيال المتعاقبة التي تنبثق من الجذر.'
               : 'Offspring. Progeny. The generations that grow from a root.'}
           </blockquote>
 
-          <div className={`flex flex-col gap-4 text-white/50 text-base md:text-lg leading-relaxed max-w-2xl ${isAr ? 'rtl:text-right' : ''}`}>
+          <div className={`flex flex-col gap-4 text-white/50 text-base md:text-lg leading-relaxed max-w-2xl rtl:text-right`}>
             <p>{tAbout('vision.p1')}</p>
             <p>{tAbout('vision.p2')}</p>
           </div>
@@ -558,7 +558,7 @@ export default async function HomePage() {
       ════════════════════════════════════════════════════════ */}
       <section id="contact" className="bg-paper px-6 py-14 md:py-20 lg:py-28">
         <div className="max-w-content mx-auto">
-          <div className={`mb-14 ${isAr ? 'rtl:text-right' : ''}`}>
+          <div className={`mb-14 rtl:text-right`}>
             <p className="text-xs font-semibold tracking-[0.18em] uppercase text-teal mb-3">
               {isAr ? 'تواصل معنا' : 'Get In Touch'}
             </p>
@@ -570,7 +570,7 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className={`grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] gap-14 items-start ${isAr ? 'rtl:text-right' : ''}`}>
+          <div className={`grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] gap-14 items-start rtl:text-right`}>
             {/* Form */}
             <div className="bg-white rounded-3xl border border-border shadow-sm p-8 md:p-10">
               <ContactForm locale={locale} />
@@ -661,7 +661,7 @@ export default async function HomePage() {
                     },
                   ] as Array<{ label: string; content: React.ReactNode; icon: React.ReactNode; color: string }>
                 ).map(({ label, content, icon, color }) => (
-                  <div key={label} className={`flex items-start gap-4 ${isAr ? 'rtl:flex-row-reverse' : ''}`}>
+                  <div key={label} className={`flex items-start gap-4 rtl:flex-row-reverse`}>
                     <span className={`mt-0.5 flex-shrink-0 ${color}`}>{icon}</span>
                     <div>
                       <p className="text-[10px] font-bold tracking-widest uppercase text-ink-2/50 mb-1">{label}</p>
