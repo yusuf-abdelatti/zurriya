@@ -345,6 +345,7 @@ const TOTAL = 14;
 export function IntakeForm({ locale }: { locale: string }) {
   const isAr = locale === 'ar';
 
+  const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
   const [data, setData] = useState<Rec>({});
   const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
@@ -881,6 +882,100 @@ export function IntakeForm({ locale }: { locale: string }) {
     </div>,
   ];
 
+  // ── Intro screen ──
+  if (!started) {
+    const bullets = isAr
+      ? [
+          { icon: '📋', text: '١٤ قسماً تشمل كل جوانب نمو طفلكم ومستوى نموه' },
+          { icon: '⏱️', text: 'الوقت المتوقع: ٣٠ إلى ٤٥ دقيقة — يمكنكم أخذ وقتكم كاملاً' },
+          { icon: '🏠', text: 'يمكنكم تعبئتها من المنزل بهدوء قبل الزيارة الأولى' },
+          { icon: '❓', text: 'إذا لم تعرفوا إجابة ما، اكتبوا «لا أعرف» أو «لا ينطبق» — لا توجد إجابات خاطئة' },
+          { icon: '🔒', text: 'جميع المعلومات سرية تماماً ومحمية ولن تُشارك مع أي جهة دون إذنكم' },
+        ]
+      : [
+          { icon: '📋', text: '14 sections covering every aspect of your child\'s development' },
+          { icon: '⏱️', text: 'Expected time: 30–45 minutes — take all the time you need' },
+          { icon: '🏠', text: 'Best completed from home, calmly, before the first visit' },
+          { icon: '❓', text: 'If you\'re unsure of an answer, write "I don\'t know" or "N/A" — there are no wrong answers' },
+          { icon: '🔒', text: 'All information is strictly confidential and will never be shared without your permission' },
+        ];
+
+    return (
+      <div className="max-w-2xl mx-auto">
+        {/* Logo + center name */}
+        <div className="text-center mb-8">
+          <div className="inline-block bg-white rounded-2xl shadow-sm border border-border p-3 mb-5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo/logo.png" alt="Zurriya" className="h-20 w-auto mx-auto" />
+          </div>
+          <h1 className="font-heading text-2xl md:text-3xl text-ink leading-tight">
+            {isAr ? (
+              <>مركز <span className="text-teal font-black">ذرية</span> لتنمية الأطفال</>
+            ) : (
+              <><span className="text-teal font-black">Zurriya</span> Child Development Center</>
+            )}
+          </h1>
+        </div>
+
+        {/* Main card */}
+        <div className="bg-white rounded-3xl border border-border shadow-sm overflow-hidden">
+          {/* Teal banner */}
+          <div className="bg-teal px-8 py-6 text-center">
+            <h2 className="font-heading text-xl text-white leading-snug">
+              {isAr
+                ? 'مرحباً بكم — هذه الاستمارة هي أساس رحلتكم معنا'
+                : 'Welcome — This form is the foundation of your journey with us'}
+            </h2>
+            <p className="text-white/75 text-sm mt-2 leading-relaxed">
+              {isAr
+                ? 'إجاباتكم الدقيقة تساعدنا على فهم طفلكم بعمق قبل اللقاء الأول، وتوفير وقت ثمين نكرّسه كلّه لطفلكم.'
+                : 'Your detailed answers help us understand your child deeply before the first meeting, saving precious time we can dedicate entirely to your child.'}
+            </p>
+          </div>
+
+          {/* Bullets */}
+          <div className="px-8 py-7 flex flex-col gap-4">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-ink-2/50 mb-1">
+              {isAr ? 'ما الذي ستجدون في هذه الاستمارة؟' : 'What to expect'}
+            </p>
+            {bullets.map((b, i) => (
+              <div key={i} className={`flex items-start gap-3 ${isAr ? 'flex-row-reverse text-right' : ''}`}>
+                <span className="text-xl flex-shrink-0 mt-0.5">{b.icon}</span>
+                <p className="text-sm text-ink-2 leading-relaxed">{b.text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Encouragement */}
+          <div className="mx-8 mb-6 bg-coral-pale border border-coral/20 rounded-2xl px-5 py-4 text-center">
+            <p className="text-sm font-semibold text-coral-dark">
+              {isAr
+                ? '💚 إقدامكم على هذه الخطوة هو أفضل شيء تفعلونه لطفلكم اليوم.'
+                : '💚 Taking this step is one of the best things you can do for your child today.'}
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="px-8 pb-8">
+            <button
+              type="button"
+              onClick={() => setStarted(true)}
+              className="w-full flex items-center justify-center gap-3 bg-teal text-white font-semibold text-base rounded-2xl py-4 hover:bg-teal-dark transition-colors shadow-md shadow-teal/25"
+            >
+              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" className={isAr ? 'rotate-180' : ''}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+              </svg>
+              {isAr ? 'ابدأ الاستمارة' : 'Start the Form'}
+            </button>
+            <p className="text-center text-xs text-ink-2/40 mt-3">
+              {isAr ? 'سري وخاص · Strictly Confidential' : 'Strictly Confidential · سري وخاص'}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // ── Success screen ──
   if (status === 'done') {
     return (
@@ -924,6 +1019,22 @@ export function IntakeForm({ locale }: { locale: string }) {
 
       {/* Section card */}
       <div className="bg-white rounded-3xl border border-border shadow-sm p-7 md:p-10">
+        {/* Halfway motivational banner — shown at section 8 (step 7) */}
+        {step === 7 && (
+          <div className={`bg-teal-pale border border-teal/20 rounded-2xl px-5 py-4 mb-6 flex items-center gap-4 ${isAr ? 'flex-row-reverse text-right' : ''}`}>
+            <span className="text-3xl flex-shrink-0">💚</span>
+            <div>
+              <p className="font-semibold text-teal-dark text-sm leading-snug">
+                {isAr ? 'أنتم في المنتصف — أحسنتم!' : "You're halfway there — great work!"}
+              </p>
+              <p className="text-xs text-ink-2 mt-1 leading-relaxed">
+                {isAr
+                  ? 'كل إجابة تكتبونها تقربنا من فهم أعمق لطفلكم. إقدامكم على هذه الخطوة يصنع فرقاً حقيقياً.'
+                  : 'Every answer brings us closer to a deeper understanding of your child. The effort you\'re putting in makes a real difference.'}
+              </p>
+            </div>
+          </div>
+        )}
         <h2 className="font-heading text-xl md:text-2xl text-ink mb-6">{titles[step][isAr ? 'ar' : 'en']}</h2>
         {sections[step]}
       </div>
