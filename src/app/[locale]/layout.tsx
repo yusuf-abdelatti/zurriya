@@ -6,6 +6,7 @@ import { routing } from '../../../i18n/routing';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { LocaleAttributes } from '@/components/LocaleAttributes';
+import { ChatWidget } from '@/components/ChatWidget';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -55,6 +56,7 @@ export default async function LocaleLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ChatWidget locale={locale} />
 
         {/* Floating WhatsApp button */}
         <a
